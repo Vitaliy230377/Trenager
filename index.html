@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Trenager</title>
+</head>
+<body>
+<main>
+    <div class="container">
+        <button class="helpTask hidden">
+            <p class="helpTask__title"> Умова задачі</p>
+        </button>
+        <div class="helloBlock absolute">
+            <h1 class="mainTitle">Тренажер по складанню математичної моделі та розв'язування її в пошуку рішень
+                <br> на прикладі задачі максимізації щомісячного прибутку підприємства <br>
+                Розроблено в рамках бакалаврської роботи, спеціальність : комп'ютерні науки <br> студент Пилипченко
+                Віталій, кафедра ММСІ ПУЕТ, 2021р.
+            </h1>
+            <button class="logBtn" type="button">Розпочати роботу з тренажером</button>
+        </div>
+        <div class="taskBlock absolute hidden">
+            <h3 class="taskBlock__title">УМОВА ЗАДАЧІ <br>Підприємство має два види устаткування А <sub>1</sub>, А <sub>2</sub>,
+                на якому
+                можна виробляти 4
+                види продукції B <sub>1</sub>, B <sub>2</sub>, B <sub>3</sub>, B <sub>4</sub> збут якої необмежений,
+                тому підприємство само планує асортимент і величину
+                випуску продукції. Сировина також може постачатися в необмеженій кількості. У таблиці наведена умова
+                задачі. Треба знайти план випуску продукції, щоб місячний прибуток був максимальний. </h3>
+            <div class="taskBlock__img"></div>
+            <button class="taskBlock__btn" type="button"></button>
+        </div>
+        <!--        Питання1-->
+        <div class="question ">
+            <form class="questionForm passiveBlock" action="#" method="post">
+                <h3 class="questionForm__title">Крок 1. Що потрібно знайти в даній задачі?</h3>
+                <label>
+                    <input type="radio" name="test" value="1">Кількість X<sup>i</sup> &nbsp продукції кожного виду &nbsp
+                    <sub>i</sub>, що виготовлена за
+                    місяць, i =1, 2, 3, 4;
+                </label>
+                <label>
+                    <input type="radio" name="test" value="0">Кількість устаткування Y<sup>j</sup> &nbsp типу j, що
+                    виготовлено за
+                    місяць,
+                    j =1, 2;
+                </label>
+                <label>
+                    <input type="radio" name="test" value="0">Кількість витраченого часу Tij на виготовлення продукції
+                    і-того виду, j-тим видом устаткування за місяць.
+                </label>
+
+                <button id="question1" class="submit" type="button">Відповісти</button>
+            </form>
+
+        </div>
+        <!--        Питання 2 -->
+        <div class="question ">
+            <form class="questionForm passiveBlock" action="#" method="post">
+                <h3 class="questionForm__title"> Крок 2. Що потрібно оптимізувати в задачі?</h3>
+                <label>
+                    <input type="radio" name="test" value="0">Мінімальний прибуток;
+                </label>
+                <label>
+                    <input type="radio" name="test" value="0">Мінімальний ризик;
+                </label>
+                <label>
+                    <input type="radio" name="test" value="1">Максимальний прибуток.
+                </label>
+                <!--                <input type="submit" value="Submit">-->
+                <button id="question2" class="submit" type="button">Відповісти</button>
+            </form>
+        </div>
+        <!--        Питання 3 -->
+        <div class="question">
+            <form class="questionForm passiveBlock" action="#" method="post">
+                <h3 class="questionForm__title"> Крок 3. Цільова функція...</h3>
+                <label>
+                    <input type="radio" name="test" value="1">max;
+                </label>
+                <label>
+                    <input type="radio" name="test" value="0">min;
+                </label>
+                <label>
+                    <input type="radio" name="test" value="0">min max;
+                </label>
+                <label>
+                    <input type="radio" name="test" value="0">max min.
+                </label>
+                <button id="question3" class="submit" type="button">Відповісти</button>
+            </form>
+        </div>
+        <!--        Питання 4-->
+        <div class="question">
+            <form class="questionForm passiveBlock" action="#" method="post">
+                <h3 class="questionForm__title"> Крок 4. Скільки типів устаткування в умові задачі?</h3>
+                <label>
+                    <input type="radio" name="test" value="0">1;
+                </label>
+                <label>
+                    <input type="radio" name="test" value="1">2;
+                </label>
+                <label>
+                    <input type="radio" name="test" value="0">3;
+                </label>
+                <label>
+                    <input type="radio" name="test" value="0">4.
+                </label>
+                <button id="question4" class="submit" type="button">Відповісти</button>
+            </form>
+        </div>
+        <!--        Питання 5-->
+        <div class="question">
+            <form class="questionForm passiveBlock" action="#" method="post">
+                <h3 class="questionForm__title"> Крок 5. Які ресурси обмежують виробництво продукції?</h3>
+                <label>
+                    <input type="radio" name="test" value="0">тільки сировина;
+                </label>
+                <label>
+                    <input type="radio" name="test" value="1">тільки час;
+                </label>
+                <label>
+                    <input type="radio" name="test" value="0">тільки сировина і час.
+                </label>
+                <button id="question5" class="submit" type="button">Відповісти</button>
+            </form>
+        </div>
+        <!--        Питання 6-->
+        <div class="question">
+            <form class="questionForm passiveBlock" action="#" method="post">
+                <h3 class="questionForm__title"> Крок 6. Скільки часу буде використано для виготовлення одиниці
+                    продукції виду B2
+                    на устаткуванні А2?</h3>
+                <label>
+                    <input type="radio" name="test" value="0">0;
+                </label>
+                <label>
+                    <input type="radio" name="test" value="0">1;
+                </label>
+                <label>
+                    <input type="radio" name="test" value="0">2;
+                </label>
+                <label>
+                    <input type="radio" name="test" value="1">3.
+                </label>
+
+                <button id="question6" class="submit" type="button">Відповісти</button>
+            </form>
+        </div>
+        <!--        Питання 7-->
+        <div class="question">
+            <form class="questionForm passiveBlock" action="#" method="post">
+                <h3 class="questionForm__title"> Крок 7. Кількість часу, першого видом устаткування для
+                    виготовлення продукції, задається виразом...</h3>
+                <label>
+                    <input type="radio" name="test" value="1"> x1+3x3+6x4;
+                </label>
+                <label>
+                    <input type="radio" name="test" value="0">x1x2x3 x4;
+                </label>
+                <label>
+                    <input type="radio" name="test" value="0">x1+x2+x3+x3;
+                </label>
+                <label>
+                    <input type="radio" name="test" value="0">x1x2+x3x4.
+                </label>
+
+                <button id="question7" class="submit" type="button">Відповісти</button>
+            </form>
+        </div>
+        <!--        Питання 8-->
+        <div class="question">
+            <form class="questionForm passiveBlock" action="#" method="post">
+                <h3 class="questionForm__title">Крок 8. Для того, щоб знайти прибуток від реалізації
+                    виготовленої
+                    продукції i-го
+                    типу за місяць треба:</h3>
+                <label>
+                    <input type="radio" name="test" value="0">прибуток від реалізації i-го виду продукції поділити на
+                    кількість виготовленої продукції i-го типу за місяць;
+                </label>
+                <label>
+                    <input type="radio" name="test" value="0">прибуток від реалізації одного виду продукції i-го типу
+                    відняти від кількості виготовленої продукції i-го типу за місяць;
+                </label>
+                <label>
+                    <input type="radio" name="test" value="1">прибуток від реалізації одного виду продукції i-го типу
+                    помножити на кількість виготовленої продукції i-го типу за місяць;
+                </label>
+                <label>
+                    <input type="radio" name="test" value="0">прибуток від реалізації одного виду продукції i-го типу
+                    додати до кількості виготовленої продукції i-го типу за місяць.
+                </label>
+
+                <button id="question8" class="submit" type="button">Відповісти</button>
+            </form>
+        </div>
+        <!--        Питання 9-->
+        <div class="question">
+            <form class="questionForm passiveBlock" action="#" method="post">
+                <h3 class="questionForm__title"> Крок 9. Кількість обмежень на ресурси в задачі...</h3>
+                <label>
+                    <input type="radio" name="test" value="0">4;
+                </label>
+                <label>
+                    <input type="radio" name="test" value="1">2;
+                </label>
+                <label>
+                    <input type="radio" name="test" value="0">3;
+                </label>
+                <label>
+                    <input type="radio" name="test" value="0">1.
+                </label>
+
+                <button id="question9" class="submit" type="button">Відповісти</button>
+            </form>
+        </div>
+        <!--        Питання 10-->
+        <div class="question">
+            <form class="questionForm passiveBlock" action="#" method="post">
+                <h3 class="questionForm__title">Крок 10. Прибуток від всієї продукції B2 =...</h3>
+                <label>
+                    <input type="radio" name="test" value="0">45x2;
+                </label>
+                <label>
+                    <input type="radio" name="test" value="0">45+x2;
+                </label>
+                <label>
+                    <input type="radio" name="test" value="0">230x2;
+                </label>
+                <label>
+                    <input type="radio" name="test" value="1">50x2.
+                </label>
+
+                <button id="question10" class="submit" type="button">Відповісти</button>
+            </form>
+        </div>
+        <!--        Питання 11-->
+        <div class="question">
+            <form class="questionForm passiveBlock" action="#" method="post">
+                <h3 class="questionForm__title">Крок 11. Чи є обмеження на знак невідомих?</h3>
+                <label>
+                    <input type="radio" name="test" value="1">Так;
+                </label>
+                <label>
+                    <input type="radio" name="test" value="0">Ні.
+                </label>
+                <button id="question11" class="submit" type="button">Відповісти</button>
+            </form>
+        </div>
+        <!--            Питання 12-->
+        <div class="question">
+            <form class="questionForm passiveBlock" action="#" method="post">
+                <h3 class="questionForm__title">Крок 12. Виберіть необхідні обмеження на знак невідомих</h3>
+                <label>
+<!--                    &#8804 Коди для знаків нерівностей-->
+                    <input type="radio" name="test" value="0"> &#8804 0;
+                </label>
+                <label>
+                    <input type="radio" name="test" value="1"> &#8805 0;
+                </label>
+                <label>
+                    <input type="radio" name="test" value="0"> &#60 0;
+                </label>
+                <label>
+                    <input type="radio" name="test" value="0"> &#62 0.
+                </label>
+                <button id="question12" class="submit" type="button">Відповісти</button>
+            </form>
+        </div>
+        <!--        Перехід в Excel питання 13-->
+        <div class="question">
+            <form class="questionExcelForm passiveBlock" action="#" method="post">
+                <h3 class="questionExcelForm__title"> Крок 13. Для отримання математичної моделі задачі введіть
+                    необхідні числа і знаки <br>
+                    Невірні значення індекуються червоною рамкою клітини
+                </h3>
+                <div class="mathModel"></div>
+                <label class="question13__label question13__label--top">
+                    <input class="question13__inputValue" type="text" pattern="[0-9]" min="1" maxlength="2">
+                    <input class="question13__inputValue" type="text" pattern="[0-9]" min="1" maxlength="2">
+                    <input class="question13__inputValue" type="text" pattern="[0-9]" min="1" maxlength="2">
+                    <input class="question13__inputValue" type="text" pattern="[0-9]" min="1" maxlength="2">
+                </label>
+                <label class="question13__label question13__label--medium">
+                    <input class="question13__inputValue" type="text" pattern="[0-9]" min="1" maxlength="1">
+                    <input class="question13__inputValue" type="text" pattern="[0-9]" min="1" maxlength="1">
+                    <input class="question13__inputValue" type="text" pattern="[0-9]" min="1" maxlength="1">
+                    <input class="question13__inputValue" type="text" pattern="[0-9]" min="1" maxlength="1">
+                    <select class="question13__select">
+                        <option value="1"> &#8804</option>
+                        <option selected value="0"> &#8805</option>
+                        <option value="0"> &#60</option>
+                        <option value="0"> &#62</option>
+                    </select>
+                    <input class="question13__inputValue question13__inputValue--number" type="text" pattern="[0-9]"
+                           min="1" maxlength="3">
+                </label>
+                <label class="question13__label question13__label--bottom">
+                    <input class="question13__inputValue" type="text" pattern="[0-9]" min="1" maxlength="1">
+                    <input class="question13__inputValue" type="text" pattern="[0-9]" min="1" maxlength="1">
+                    <input class="question13__inputValue" type="text" pattern="[0-9]" min="1" maxlength="1">
+                    <input class="question13__inputValue" type="text" pattern="[0-9]" min="1" maxlength="1">
+                    <select class="question13__select">
+                        <option value="1">&#8804</option>
+                        <option selected value="0">&#8805</option>
+                        <option value="0">&#60</option>
+                        <option value="0">&#62</option>
+                    </select>
+                    <input class="question13__inputValue question13__inputValue--number" type="text" pattern="[0-9]"
+                           min="1" maxlength="3">
+                </label>
+                <label class="question13__label question13__label--x">
+                    <select class="question13__select">
+                        <option value="0">&#8804</option>
+                        <option selected value="1">&#8805</option>
+                        <option value="0">&#60</option>
+                        <option value="0">&#62</option>
+                    </select>
+                </label>
+                <h3 class="questionExcelForm__title">Переходимо до розв'язку задачі в "Excel" в пошуку рішень</h3>
+                <button id="question13" class="submit" type="button">Відповісти</button>
+            </form>
+        </div>
+        <!--        Питання 14-->
+        <div class="questionExcel">
+            <!--            <h3 class="questionExcel__title">Питання 14. <br>Перенесіть умову задачі на аркуш Excel</h3>-->
+            <form class="question14 passiveBlock" action="#" method="post">
+                <h3 class="questionExcel__title">Крок 14. Перенесіть умову задачі на аркуш Excel</h3>
+                <label class="question14__label question14__label--top">
+                    <input class="inputValue" type="text" pattern="[0-9]" min="1" maxlength="1">
+                    <input class="inputValue" type="text" pattern="[0-9]" min="1" maxlength="1">
+                    <input class="inputValue" type="text" pattern="[0-9]" min="1" maxlength="1">
+                    <input class="inputValue" type="text" pattern="[0-9]" min="1" maxlength="1">
+                    <input class="inputValue inputValue--time" type="text" pattern="[0-9]" min="1" maxlength="3">
+                </label>
+                <label class="question14__label question14__label--medium">
+                    <input class="inputValue" type="text" pattern="[0-9]" min="1" maxlength="1">
+                    <input class="inputValue" type="text" pattern="[0-9]" min="1" maxlength="1">
+                    <input class="inputValue" type="text" pattern="[0-9]" min="1" maxlength="1">
+                    <input class="inputValue" type="text" pattern="[0-9]" min="1" maxlength="1">
+                    <input class="inputValue inputValue--time" type="text" pattern="[0-9]" min="1" maxlength="3">
+                </label>
+                <label class="question14__label question14__label--bottom">
+                    <input class="inputValue" type="text" pattern="[0-9]" min="1" maxlength="2">
+                    <input class="inputValue" type="text" pattern="[0-9]" min="1" maxlength="2">
+                    <input class="inputValue" type="text" pattern="[0-9]" min="1" maxlength="2">
+                    <input class="inputValue" type="text" pattern="[0-9]" min="1" maxlength="2">
+                </label>
+                <button id="question14" class="submit" type="button">Відповісти</button>
+            </form>
+        </div>
+        <!--        Питання 15-->
+        <div class="questionExcel">
+            <form class="question15  passiveBlock" action="#" method="post">
+                <h3 class="question15__title">Крок 15. Зарезервуйте клітинки для невідомих задавши порожні клітини нулями</h3>
+                <label class="question15__label question15__label--top">
+                    <input class="inputValue" type="text" pattern="[0-9]" min="1" maxlength="1">
+                    <input class="inputValue" type="text" pattern="[0-9]" min="1" maxlength="1">
+                    <input class="inputValue" type="text" pattern="[0-9]" min="1" maxlength="1">
+                    <input class="inputValue" type="text" pattern="[0-9]" min="1" maxlength="1">
+                </label>
+                <button id="question15" class="submit" type="button">Відповісти</button>
+            </form>
+        </div>
+        <!--        Питання 16-->
+        <div class="questionExcel">
+            <form class="question16 passiveBlock" action="#" method="post">
+                <h3 class="question16__title">Крок 16. Введіть формулу для обчислення значення цільової функції.
+                    В Excel ця формула вводиться в клітині B9. Формула в Excel починається з знаку " = ". Координати клітинок вводяться великими англійськими літерами (в тренажері координати клітинок вводяться в порядку зростання алфавіту та нумерації). </h3>
+                <label class="question16__label">
+                    <input class="question16__input" type="text" pattern="[0-9]" min="1" maxlength="24">
+                </label>
+                <button id="question16" class="submit" type="button">Відповісти</button>
+            </form>
+        </div>
+        <!--        Питання 17-->
+        <div class="question">
+            <form class="questionExcelForm questionExcelForm--17 passiveBlock " action="#" method="post">
+                <h3 class="questionExcelForm__title">Крок 17. Справа від таблиці з умовою задачі, створюємо колонку
+                    для формул,
+                    за якими обчислюються ліві частини обмежень стосовно місячного фонду часу, і в комірку G2 вводимо
+                    формулу для першого обмеження </h3>
+                <div class="mathModel mathModel--Task16"></div>
+                <button id="question17" class="submit" type="button">Далі</button>
+            </form>
+        </div>
+        <!--        Питання 18-->
+        <div class="question">
+            <form class="question18 passiveBlock" action="#" method="post">
+                <h3 class="question18__title">Крок 18. Введіть формулу в комірку G3 для  обчислення лівої частини обмеження стосовно місячного фонду часу для другого типу устаткування.
+                    <br> Формула в Excel починається з знаку " = ". Координати клітинок вводяться великими англійськими літерами (в тренажері координати клітинок вводяться в порядку зростання алфавіту та нумерації).</h3>
+                <label class="question18__label question18__label--top">
+                    <input class="question18__inputValue" type="text" pattern="[0-9]" min="1" maxlength="24">
+                </label>
+                <button id="question18" class="submit question18__btn" type="button">Відповісти</button>
+            </form>
+        </div>
+        <!--        Питання 19-->
+        <div class="question">
+            <div class="question19Help passiveBlock hidden">
+                <p>Номер клітинки і рядка починається зі знаку "$"Підказка зображена знизу на фото</p>
+                <div class="question19Help__img"></div>
+                <button class="question19Help__btn">ок</button>
+            </div>
+            <form class="question19 passiveBlock" action="#" method="post">
+                <h3 class="question19__title">Крок 19. Для розв’язування задачі в «Поиск решений» обираємо вкладку «Данные». Обираємо пункт пошук рішень що розташований в пункті меню "Аналіз". Введіть координати клітинки цільової функції у вікно "Оптимизировать целевую функцию" </h3>
+                <label class="question19__label question19__label--top">
+                    <input class="question19__inputValue" type="text" pattern="[0-9]" min="1" maxlength="24">
+                </label>
+                <button id="question19" class="submit question19__btn" type="button">Відповісти</button>
+            </form>
+        </div>
+        <!--        Питання 20-->
+        <div class="question">
+            <div class="question20Help passiveBlock hidden">
+                <p>Номер клітинки і рядка починається зі знаку "$"Підказка зображена знизу на фото</p>
+                <div class="question20Help__img"></div>
+                <button class="question20Help__btn">ок</button>
+            </div>
+            <form class="question20 passiveBlock " action="#" method="post">
+                <h3 class="question20__title"> Крок 20. Введіть діапазон клитинок з невідомими <br>
+                    (Практично в Excel це робиться натисненням на червону стрілку в правій частині вікна і виділенням діапазону значень х <sub>i</sub>)
+                </h3>
+                <label class="question20__label question20__label--top">
+                    <input class="question20__inputValue" type="text" pattern="[0-9]" min="1" maxlength="24">
+                </label>
+                <button id="question20" class="submit question20__btn" type="button">Відповісти</button>
+            </form>
+        </div>
+        <!--                Питання 21-->
+        <div class="question">
+            <div class="question21 passiveBlock ">
+                <h3 class="question21__title">Крок 21. В полі «Ограничения» вводимо обмеження. Натискаємо кнопку добавить і
+                    обираємо клітинку з стовпця G, в якому зберігаються ліві частини обмежень, маємо $G$2. Далі ставимо
+                    знак обмеження &#8804, далі адреса клітинки стовбця F, в якому введені обмеження в часі для першого
+                    типу обладнання за умовою задачі, тобто $F$2 </h3>
+                <button id="question21" class="submit question21__btn" type="button">Далі</button>
+            </div>
+        </div>
+        <!--    Питання 22-->
+        <div class="question">
+            <div class="question22Help passiveBlock hidden">
+                <p>Номер клітинки і рядка починається зі знаку "$"Підказка зображена знизу на фото</p>
+                <div class="question22Help__img"></div>
+                <button class="question20Help__btn">ок</button>
+            </div>
+            <form class="question22 passiveBlock" action="#" method="post">
+                <h3 class="question22__title">Крок 22. Введіть обмеження в часі,в якому введено максимальна кількість часу для другого типу обладнання <br>Коли всі обмеження введені, натискаємо кнопку «Найти решение»</h3>
+                <label class="question22__label question22__label--top">
+                    <input class="question22__inputValue" type="text" pattern="[0-9]" min="1" maxlength="24">
+                    <select class="question22__select">
+                        <option value="1">&#8804</option>
+                        <option selected value="0">&#8805</option>
+                        <option value="0"><</option>
+                        <option value="0">></option>
+                    </select>
+                    <input class="question22__inputValue" type="text" pattern="[0-9]" min="1" maxlength="24">
+                </label>
+                <button id="question22" class="submit question22__btn" type="button">Відповісти</button>
+            </form>
+        </div>
+
+        <!--Питання 23-->
+        <div class="question">
+            <div class="question23 passiveBlock">
+                <h3 class="question23__title">Крок 23. З`являється вікно «Результати поиска решения», в якому зберігаємо знайдене рішення натискаючи кнопку ОК.</h3>
+                <button id="question23" class="submit question23__btn" type="button">Далі</button>
+            </div>
+        </div>
+        <!--    Питання 24-->
+        <div class="question">
+            <div class="question24 passiveBlock">
+                <h3 class="question24__title">Крок 24. Відбувається перехід на аркуш Excel, на якому комірка B9 містить значення цільової функції, комірки G2, G3 містять використаний час.
+                    <br> Бачимо що цільова функція складає  5225 грошових одиниць. Кількість продукції B <sub>1</sub> - 115, B<sub>4</sub> - 0,83 одиниць. При оптимальному плані виробництва продукція виду B<sub>2</sub> B<sub>3</sub> не виробляється.</h3>
+                <button id="question24" class="submit question24__btn" type="button">Ок</button>
+            </div>
+        </div>
+        <div class="errorHero">
+            <div class="errorDiv ">
+                <h3 class="errorDiv__title">Відповідь невірна</h3>
+                <p class="info">Повторіть спробу</p>
+                <button class="errorDiv__btn errorDiv__btn--style" type="button">Ok</button>
+            </div>
+        </div>
+        <div class="taskHero hidden">
+            <div class="taskDiv">
+                <div class="taskBlock">
+                    <h3 class="taskBlock__title">УМОВА ЗАДАЧІ <br>Підприємство має два види устаткування А <sub>1</sub>,
+                        А <sub>2</sub>, на
+                        якому можна виробляти 4
+                        види продукції B1, B2, B3, B4 збут якої необмежений, тому підприємство само планує асортимент і
+                        величину
+                        випуску продукції. Сировина також може постачатися в необмеженій кількості. У таблиці наведена
+                        умова
+                        задачі. Треба знайти план випуску продукції, щоб місячний прибуток був максимальний.</h3>
+                    <div class="taskBlock__img"></div>
+                    <button class="continueWork" type="button">Продовжити роботу з тренажером</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="finalHero hidden ">
+        <div class="finalDiv">
+            <div class="finalBlock">
+                <h3 class="finalBlock__title">Робота тренажеру завершена. <br> Для продовження або завершення роботи з
+                    тренажером натисніть відповідну кнопку.</h3>
+                <button id="reload" class="finalBtn finalBtn--reload" type="button">Перезапустити тренажер</button>
+                <button id="close" class="finalBtn finalBtn--close" type="button">Завершити роботу з тренажером</button>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="logic.js"></script>
+<script src="renderer.js"> require("renderer.js")</script>
+</body>
+</html>
